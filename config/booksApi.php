@@ -17,7 +17,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $portada = $_POST['portada'] ?? null;
     $estado = $_POST['estado'] ?? null;
 
-    if ($api_id && $estado) {
+    if (!empty($api_id) && !empty($estado)) {
 
         // buscar libro
         $stmt = $conn->prepare("SELECT id_libro FROM libros WHERE api_Book_id = ?");
@@ -27,6 +27,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         $libro = $res->fetch_assoc();
         $stmt->close();
 
+        //Si no esta, lo inserto.
         if ($libro) {
             $id_libro = $libro['id_libro'];
         } else {
@@ -42,7 +43,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         }
 
         // insertar o actualizar estado
-        $stmt = $conn->prepare("
+    $stmt = $conn->prepare("
             INSERT INTO usuario_libros (id_usuario, id_libro, estado)
             VALUES (?, ?, ?)
             ON DUPLICATE KEY UPDATE estado = VALUES(estado)
@@ -51,12 +52,12 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         $stmt->bind_param("iis", $id_usuario, $id_libro, $estado);
         $stmt->execute();
         $stmt->close();
-
-        echo "<script>
-            alert('Libro añadido correctamente');
-            window.location.href = 'explorar.php';
-        </script>";
+        header("Location: panelLecturas.php?success=1");
+        exit;
+    } else {
+        header("Location: panelLecturas.php?error=empty");
         exit;
     }
 }
 ?>
+
