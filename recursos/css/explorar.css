@@ -1,0 +1,94 @@
+
+h1 {
+    text-align: center;
+}
+
+   /* BUSCADOR */
+.buscador-box {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.buscador-box input {
+    width: 60%;
+    padding: 12px;
+    border: 1px solid #ccc;
+    border-radius: 20px;
+}
+
+
+   /* RESULTADOS */
+.resultados {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+    gap: 20px;
+    padding: 20px;
+}
+
+
+   /* CARD LIBRO */
+.card {
+    background: #fff;
+    padding: 10px;
+    border-radius: 15px;
+    text-align: center;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+}
+
+.card img {
+    width: 100%;
+    height: 220px;
+    object-fit: cover;
+    border-radius: 10px;
+}
+
+
+   /* BOTONES */
+.btns {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    margin-top: 10px;
+}
+
+button {
+    padding: 8px;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+}
+
+/* ESTADOS DE LECTURA */
+.quiero {
+    background: #d8b4f8;
+}
+
+.leyendo {
+    background: #f7c59f;
+}
+
+.leido {
+    background: #9be7a1;
+}
+
+
+   /* LOADING */
+.loading {
+    display: none;
+    margin: 30px 0;
+    text-align: center;
+}
+
+.libro {
+    font-size: 3rem;
+    animation: flotar 1s ease-in-out infinite alternate;
+}
+
+@keyframes flotar {
+    from {
+        transform: translateY(0);
+    }
+    to {
+        transform: translateY(-10px);
+    }
+}

@@ -1,0 +1,159 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+    font-size: 16px;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+
+    background: linear-gradient(
+        135deg,
+        #f4efe9 0%,
+        #efe4d6 50%,
+        #e6d8c7 100%
+    );
+
+    color: #3b2a1f;
+
+    min-height: 100vh;
+}
+
+.sala-container {
+    max-width: 700px;
+    width: 100%;
+    margin: 40px auto;
+    padding: 20px;
+}
+
+.titulo-sala {
+    text-align: center;
+    margin-bottom: 20px;
+
+    font-family: 'Playfair Display', serif;
+    font-size: 2.3rem;
+    line-height: 1.3;
+    color: #4b3f35;
+}
+
+.titulo-sala span {
+    color: #8b5e3c;
+    font-weight: 700;
+    display: inline-block;
+    transition: transform 0.3s ease, color 0.3s ease;
+}
+
+.titulo-sala span:hover {
+    color: #a05fa0;
+    transform: scale(0.95);
+    text-decoration: underline;
+}
+
+/* CAJA DE MENSAJES */
+.cajon {
+    background: #f5efe8;
+    padding: 20px;
+    border-radius: 10px;
+    height: 350px;
+    overflow-y: auto;
+}
+
+.mensaje {
+    margin-bottom: 15px;
+}
+
+.form-mensaje {
+    margin-top: 15px;
+    display: flex;
+    gap: 10px;
+}
+
+.form-mensaje textarea {
+    flex: 1;
+    resize: none;
+    padding: 10px;
+}
+
+.form-mensaje button {
+    padding: 10px 15px;
+    border: none;
+    background: #5c3765;
+    color: white;
+    border-radius: 6px;
+    cursor: pointer;
+}
+
+.modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+
+    width: 100%;
+    height: 100%;
+
+    background: rgba(0, 0, 0, 0.5);
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.modal-content {
+    background: #f1e6d6;
+    padding: 30px;
+
+    border-radius: 16px;
+
+    text-align: center;
+    width: 90%;
+    max-width: 400px;
+}
+
+.hidden {
+    display: none;
+}
+
+@media (max-width = 768px) {
+
+    .sala-container {
+        margin: 20px auto;
+        padding: 15px;
+    }
+
+    .titulo-sala {
+        font-size: 1.8rem;
+    }
+
+    .cajon {
+        height: 300px;
+        padding: 15px;
+    }
+
+    .form-mensaje {
+        flex-direction: column;
+    }
+
+    .form-mensaje button {
+        width: 100%;
+    }
+}
+
+@media (max-width = 480px) {
+
+    .titulo-sala {
+        font-size: 1.5rem;
+    }
+
+    .cajon {
+        height: 250px;
+    }
+
+    .modal-content {
+        padding: 20px;
+    }
+}

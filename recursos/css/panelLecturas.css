@@ -1,0 +1,169 @@
+.btn_select {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin: 20px 0;
+}
+
+.btn {
+    padding: 8px 14px;
+    color: #333;
+    text-decoration: none;
+    border: 1px solid #333;
+    border-radius: 5px;
+    transition: background-color .2s ease;
+}
+
+.btn:hover {
+    background-color: #f2f2f2;
+}
+
+.btn.activo {
+    color: #fff;
+    background-color: #333;
+}
+
+/* Panel de registros */
+.panel {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
+    gap: 15px;
+    margin-top: 20px;
+}
+
+.registro {
+    text-align: center;
+    padding: 10px;
+    border-radius: 12px;
+}
+
+.registro img {
+    width: 100%;
+    max-width: 180px;
+    height: 260px;
+    object-fit: cover;
+    border-radius: 8px;
+}
+
+.registro h3 {
+    margin-top: 10px;
+    font-size: 0.95rem;
+}
+
+.registro p,
+.sin-libros {
+     font-size: 0.85rem;
+    color: #666;
+}
+
+.registro p {
+    font-size: 0.9rem;
+}
+
+.sin-libros {
+    padding: 40px;
+    text-align: center;
+}
+
+/* BUSCADOR */
+.buscador-box {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.buscador-box input {
+    width: 90%;
+    padding: 12px;
+    border-radius: 25px;
+    border: 1px solid #ddd;
+    outline: none;
+    transition: 0.2s;
+}
+
+.buscador-box input:focus {
+    border-color: #333;
+}
+
+
+/* DISEÑO EN COLUMNAS */
+
+.columnas{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 30px;
+    padding: 20px;
+    align-items: start;
+}
+
+.explorador {
+    background: #fff;
+    border-radius: 15px;
+    padding: 20px;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.08);
+}
+
+.resultados {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1rem;
+    padding: 20px;
+}
+
+
+/* FIN */
+
+.card {
+    background: #fff;
+    padding: 10px;
+    border-radius: 15px;
+    text-align: center;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+}
+
+.card img {
+    width: 100%;
+    height: 220px;
+    object-fit: cover;
+    border-radius: 10px;
+}
+
+
+   /* BOTONES */
+.btns {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    margin-top: 10px;
+}
+
+button {
+    padding: 8px;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+}
+
+.registros {
+    display: flex;
+    flex-direction: column; 
+    gap: 30px; 
+}
+
+.quiero {
+    background: #d8b4f8;
+}
+
+.leyendo {
+    background: #f7c59f;
+}
+
+.leido {
+    background: #9be7a1;
+}
+
+
+@media (max-width: 900px) {
+    .columnas {
+        grid-template-columns: 1fr;
+    }
+}
